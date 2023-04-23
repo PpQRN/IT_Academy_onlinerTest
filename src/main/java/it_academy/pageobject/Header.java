@@ -12,9 +12,9 @@ public class Header extends BasePage {
 
     private final By onlinerLogo = By.xpath("//*[contains(@class, 'onliner_logo')]");
 
-    public CatalogPageMy clickOnMainNavigationLink(String link) {
+    public CatalogPage clickOnMainNavigationLink(String link) {
         waitForElementVisible(By.xpath(format(MAIN_NAVIGATION_LINK_XPATH_PATTER, link))).click();
-        return new CatalogPageMy();
+        return new CatalogPage();
     }
 
     public WebElement getOnlinerLogo() {

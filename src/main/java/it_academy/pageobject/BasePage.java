@@ -5,7 +5,6 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -45,16 +44,6 @@ public abstract class BasePage {
         field.clear();
         field.sendKeys(value);
     }
-
-//    public boolean isElementDisplayed(By locator) {
-//        try {
-//            WebDriverWait wait = new WebDriverWait(driver, ofSeconds(10));
-//            WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
-//            return element.isDisplayed();
-//        } catch (Exception e) {
-//            return false;
-//        }
-//    }
 
     public void performValidationInLastOpenedWindowTabAndCloseItAfter(Supplier action) {
         String currentWindowHandle = driver.getWindowHandle();

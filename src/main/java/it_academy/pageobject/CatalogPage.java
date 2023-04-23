@@ -2,7 +2,6 @@ package it_academy.pageobject;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -13,11 +12,11 @@ public class CatalogPage extends BasePage {
 
     private static final By catalogPageList = By.xpath("//li[@class = " +
             "'catalog-navigation-classifier__item ']//span[contains(@class, 'wrapper')]");
+    private static final By catalogNavigationAsideListTitle = By.xpath("//div[contains(@class, " +
+            "'catalog-navigation-list__aside_active')] " +
+            "/div /div /div[@class = 'catalog-navigation-list__aside-title']");
 
-    private static final By catalogNavigationAsideListTitle = By.xpath("//div[contains(@class, 'active')]" +
-            "/div/div[@data-id='2']/div[contains(@class, 'aside')]/div/div/div[contains(@class, 'title')]");
-
-    private static final By DROPLIST_TITLE_XPATH = By.xpath( "//div[contains(@class, 'aside-item_active')]" +
+    private static final By DROPLIST_TITLE_XPATH = By.xpath("//div[contains(@class, 'aside-item_active')]" +
             "//div[contains(@class, 'dropdown-list')]" +
             "/a[contains(@href, 'onliner')]" +
             "//span[contains(@class, 'title')]");
@@ -29,10 +28,10 @@ public class CatalogPage extends BasePage {
     private static final By DROPLIST_Elements = By.xpath("//div[contains(@class, 'aside-item_active')]" +
             "//div[contains(@class, 'dropdown-list')]/a[contains(@href, 'onliner')]");
 
+    private static final By catalogNavigationAsidelist = By.xpath("//div[contains(@class, " +
+            "'catalog-navigation-list__aside_active')] /div /div");
 
-    //ЭТОТ ИКСПАС НУЖНО ПОМЕНЯТЬ
-    private static final By catalogNavigationAsidelist = By.xpath("//div[contains(@class, 'active')]" +
-            "/div/div[@data-id='2']/div[contains(@class, 'aside')]/div/div");
+    private static final By catalogNavigationClassifierItemList = By.xpath("//li[@class = 'catalog-navigation-classifier__item ']");
 
     private static final String CATALOG_CLASSIFIER_LINK_XPATH_PATTERN =
             "//span[contains(@class, 'wrapper') and contains(text(), '%s')]";
@@ -88,23 +87,27 @@ public class CatalogPage extends BasePage {
         return isElementDisplayed(catalogNavigationAsidelist);
     }
 
-    public boolean isDroplistTitleDisplayed(){
+    public boolean isDroplistTitleDisplayed() {
         return isElementDisplayed(DROPLIST_TITLE_XPATH);
     }
 
-    public boolean isDroplistDescriptionDisplayed(){
+    public boolean isDroplistDescriptionDisplayed() {
         return isElementDisplayed(DROPLIST_TITLE_XPATH);
     }
 
-    public int countDroplistElements(){
+    public int countDroplistElements() {
         return selectElements(DROPLIST_Elements).size();
+    }
+
+    public int countCatalogNavigationClassifierButtons(){
+        return selectElements(catalogNavigationClassifierItemList).size();
     }
 
     public List<WebElement> getDropListTitle() {
         return selectElements(DROPLIST_TITLE_XPATH);
     }
 
-    public List<WebElement> getDropListDescription(){
+    public List<WebElement> getDropListDescription() {
         return selectElements(DROPLIST_DESCRIPTION_XPATH);
     }
 }
