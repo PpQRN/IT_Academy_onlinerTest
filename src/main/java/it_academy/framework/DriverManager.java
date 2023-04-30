@@ -1,9 +1,15 @@
 package it_academy.framework;
 
+import com.codeborne.selenide.Configuration;
+import com.codeborne.selenide.Selenide;
+import com.codeborne.selenide.WebDriverRunner;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
 import java.util.concurrent.TimeUnit;
+
+import static com.codeborne.selenide.Selenide.open;
+
 
 public class DriverManager {
 
@@ -33,5 +39,12 @@ public class DriverManager {
     public static void closeBrowser() {
         driver.get().close();
         driver.remove();
+    }
+
+    public static void initDriver(String driverType){
+        Configuration.browser = driverType;
+        Configuration.pageLoadTimeout = 20000;
+        open();
+        WebDriverRunner.getWebDriver().manage().window().maximize();
     }
 }

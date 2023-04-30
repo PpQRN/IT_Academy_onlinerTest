@@ -1,3 +1,4 @@
+import com.codeborne.selenide.Selenide;
 import it_academy.framework.DriverManager;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeEach;
@@ -9,16 +10,17 @@ public class BaseTest {
 
     @BeforeEach
     public void setup() {
-        driver = DriverManager.getWebDriver();
-        driver.manage().window().maximize();
+        DriverManager.initDriver("chrome");
+//        driver = DriverManager.getWebDriver();
+//        driver.manage().window().maximize();
     }
 
-    @AfterAll
-    public void tearDown() {
-        DriverManager.closeBrowser();
-    }
+//    @AfterAll
+//    public void tearDown() {
+//        DriverManager.closeBrowser();
+//    }
 
     public void goToPage(String url) {
-        driver.get(url);
+        Selenide.open(url);
     }
 }
