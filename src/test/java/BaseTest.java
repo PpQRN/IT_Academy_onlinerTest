@@ -1,6 +1,7 @@
 import com.codeborne.selenide.CollectionCondition;
 import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.Selenide;
+import com.codeborne.selenide.SelenideElement;
 import it_academy.framework.DriverManager;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeEach;
@@ -26,6 +27,10 @@ public class BaseTest {
 
     public void goToPage(String url) {
         Selenide.open(url);
+    }
+
+    public String getTextFromWebElemets(SelenideElement element){
+        return element.getText();
     }
 
     public String getCurrentUrl(){return driver.getCurrentUrl();}

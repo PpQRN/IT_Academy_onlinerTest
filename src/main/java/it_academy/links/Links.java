@@ -1,7 +1,16 @@
 package it_academy.links;
 
-public class Links {
-    public static String homepage = "https://www.onliner.by/";
-    public static String catalog = "https://catalog.onliner.by/";
+public enum Links {
+    HOMEPAGE("https://www.onliner.by/"),
+    CATALOG("https://catalog.onliner.by/");
 
+    private final String link;
+
+    Links(String link) {
+        this.link = link;
+    }
+
+    public String getLink() {
+        return link;
+    }
 }

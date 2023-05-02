@@ -10,28 +10,28 @@ import static java.lang.String.format;
 
 public class CatalogPage extends BasePage {
 
-    private static final By catalogPageList = By.xpath("//li[@class = " +
+    private static final By catalogPages = By.xpath("//li[@class = " +
             "'catalog-navigation-classifier__item ']//span[contains(@class, 'wrapper')]");
     private static final By catalogNavigationAsideListTitle = By.xpath("//div[contains(@class, " +
             "'catalog-navigation-list__aside_active')] " +
             "/div /div /div[@class = 'catalog-navigation-list__aside-title']");
 
-    private static final By DROPLIST_TITLE_XPATH = By.xpath("//div[contains(@class, 'aside-item_active')]" +
+    private static final By droplistTitle = By.xpath("//div[contains(@class, 'aside-item_active')]" +
             "//div[contains(@class, 'dropdown-list')]" +
             "/a[contains(@href, 'onliner')]" +
             "//span[contains(@class, 'title')]");
 
-    private static final By DROPLIST_DESCRIPTION_XPATH = By.xpath("//div[contains(@class, 'aside-item_active')]" +
+    private final By dropListDescription = By.xpath("//div[contains(@class, 'aside-item_active')]" +
             "//div[contains(@class, 'dropdown-list')]/a[contains(@href, 'onliner')]" +
             "//span[contains(@class, 'description')]/descendant-or-self::*");
 
-    private static final By DROPLIST_Elements = By.xpath("//div[contains(@class, 'aside-item_active')]" +
+    private final By DROPLISTElements = By.xpath("//div[contains(@class, 'aside-item_active')]" +
             "//div[contains(@class, 'dropdown-list')]/a[contains(@href, 'onliner')]");
 
-    private static final By catalogNavigationAsidelist = By.xpath("//div[contains(@class, " +
+    private final By catalogNavigationAsidelist = By.xpath("//div[contains(@class, " +
             "'catalog-navigation-list__aside_active')] /div /div");
 
-    private static final By catalogNavigationClassifierItemList = By.xpath("//li[@class = 'catalog-navigation-classifier__item ']");
+    private final By catalogNavigationClassifierItems = By.xpath("//li[@class = 'catalog-navigation-classifier__item ']");
 
     private static final String CATALOG_CLASSIFIER_LINK_XPATH_PATTERN =
             "//span[contains(@class, 'wrapper') and contains(text(), '%s')]";
@@ -68,7 +68,7 @@ public class CatalogPage extends BasePage {
     }
 
     public List<String> getCatalogListText() {
-        List<WebElement> elements = selectElements(catalogPageList);
+        List<WebElement> elements = selectElements(catalogPages);
         return elements.stream()
                 .map(WebElement::getText)
                 .filter(element -> !element.equals("Onlíner Prime"))
@@ -88,26 +88,26 @@ public class CatalogPage extends BasePage {
     }
 
     public boolean isDroplistTitleDisplayed() {
-        return isElementDisplayed(DROPLIST_TITLE_XPATH);
+        return isElementDisplayed(droplistTitle);
     }
 
     public boolean isDroplistDescriptionDisplayed() {
-        return isElementDisplayed(DROPLIST_TITLE_XPATH);
+        return isElementDisplayed(droplistTitle);
     }
 
     public int countDroplistElements() {
-        return selectElements(DROPLIST_Elements).size();
+        return selectElements(DROPLISTElements).size();
     }
 
     public int countCatalogNavigationClassifierButtons(){
-        return selectElements(catalogNavigationClassifierItemList).size();
+        return selectElements(catalogNavigationClassifierItems).size();
     }
 
     public List<WebElement> getDropListTitle() {
-        return selectElements(DROPLIST_TITLE_XPATH);
+        return selectElements(droplistTitle);
     }
 
     public List<WebElement> getDropListDescription() {
-        return selectElements(DROPLIST_DESCRIPTION_XPATH);
+        return selectElements(dropListDescription);
     }
 }

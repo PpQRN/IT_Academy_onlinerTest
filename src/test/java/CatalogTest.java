@@ -1,10 +1,8 @@
-import com.codeborne.selenide.Selenide;
 import it_academy.links.Links;
 import it_academy.pageobject.*;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestInstance;
-import com.codeborne.selenide.Condition;
 
 import java.util.Arrays;
 import java.util.List;
@@ -21,7 +19,7 @@ public class CatalogTest extends BaseTest {
 
     @BeforeEach
     public void goToMainPage(){
-        goToPage(Links.homepage);
+        goToPage(Links.HOMEPAGE.getLink());
     }
 
     @Test
