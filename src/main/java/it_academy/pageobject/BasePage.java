@@ -102,4 +102,8 @@ public abstract class BasePage {
         return $(element).text();
     }
 
+    public String getCurrentURL(){
+        return getWebDriver().getCurrentUrl();
+    }
+
 }
