@@ -22,7 +22,6 @@ public abstract class BasePage {
 
     public BasePage() {
         DriverManager.initDriver("chrome");
-        //driver = DriverManager.getWebDriver();
     }
 
     public WebElement waitForElementVisible(By by) {

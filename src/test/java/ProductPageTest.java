@@ -6,6 +6,8 @@ import org.assertj.core.api.SoftAssertions;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestInstance;
 
+import static com.codeborne.selenide.Selenide.open;
+
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
 public class ProductPageTest extends BaseTest{
     private final CatalogPage catalogPage = new CatalogPage();
@@ -13,7 +15,7 @@ public class ProductPageTest extends BaseTest{
 
     @Test
     public void ProductPageTest(){
-        goToPage(Links.HOMEPAGE.getLink());
+        open(Links.HOMEPAGE.getLink());
         new Header().clickOnMainNavigationLink("Каталог");
         catalogPage.clickOnCatalogClassifierButton("Компьютеры")
                 .clickOnCatalogClassifierCategoryLink("Комплектующие")

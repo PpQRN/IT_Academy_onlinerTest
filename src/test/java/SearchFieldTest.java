@@ -12,18 +12,19 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.parallel.Execution;
 import org.junit.jupiter.api.parallel.ExecutionMode;
 
+import static com.codeborne.selenide.Selenide.open;
 import static org.assertj.core.api.Assertions.assertThat;
 
 import java.util.List;
 
 @Execution(ExecutionMode.CONCURRENT)
 public class SearchFieldTest extends BaseTest {
-    Header header = new Header();
-    SearchFieldFrame searchFieldFrame = new SearchFieldFrame();
+    private final Header header = new Header();
+    private final SearchFieldFrame searchFieldFrame = new SearchFieldFrame();
 
     @BeforeEach
     public void goToMainPage() {
-        goToPage(Links.HOMEPAGE.getLink());
+        open(Links.HOMEPAGE.getLink());
     }
 
     @Test
@@ -110,7 +111,7 @@ public class SearchFieldTest extends BaseTest {
                 .getSearchResultsTitles(input)
                 .shouldBe(CollectionCondition.sizeGreaterThan(0));
         List<String> resultTitlesText = resultTitles.stream()
-                .map(this::getTextFromWebElemets)
+                .map(SelenideElement::text)
                 .filter(text -> text.toLowerCase()
                         .contains(input.toLowerCase())).toList();
         assertThat(resultTitlesText).hasSizeGreaterThan(0);

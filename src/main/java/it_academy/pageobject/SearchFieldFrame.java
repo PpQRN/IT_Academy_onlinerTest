@@ -1,5 +1,6 @@
 package it_academy.pageobject;
 
+import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
 import org.openqa.selenium.By;
@@ -8,34 +9,35 @@ import static com.codeborne.selenide.Selenide.*;
 
 public class SearchFieldFrame extends BasePage {
 
-    private final By searchResults = By.xpath("//ul[@class = 'search__results']");
-    private final By searchField = By.xpath("//input[contains(@class, 'search')]");
-    private final By itemCategories = By.xpath("//div[contains(@class, 'item_category')]");
-    private final By searchTabItems = By.xpath("//div[contains(@class, 'search__tabs-item')]");
-    private final By productImage = By.xpath("//img");
-    private final By offerButton = By.xpath("//a[contains(@class, 'button_orange')]");
-    private final By itemProducts = By.xpath("//div[@class = 'result__item result__item_product']");
-    private final By searchResultTitles = By.xpath("//div[@class = 'product__title']/a");
+    private final SelenideElement searchResults = $x("//ul[@class = 'search__results']");
+    private final SelenideElement searchField = $x("//input[contains(@class, 'search')]");
+    private final ElementsCollection itemCategories = $$x("//div[contains(@class, 'item_category')]");
+    private final ElementsCollection searchTabItems = $$x("//div[contains(@class, 'search__tabs-item')]");
+    private final SelenideElement productImage = $x("//img");
+    private final SelenideElement offerButton = $x("//a[contains(@class, 'button_orange')]");
+    private final ElementsCollection offerButtons = $$x("//a[contains(@class, 'button_orange')]");
+    private final ElementsCollection itemProducts = $$x("//div[@class = 'result__item result__item_product']");
+    private final ElementsCollection searchResultTitles = $$x("//div[@class = 'product__title']/a");
 
     public ElementsCollection getSearchResultsTitles(String text) {
-        return $$(searchResultTitles);
+        return searchResultTitles;
     }
 
     public ElementsCollection getItemProducts() {
-        return $$(itemProducts);
+        return itemProducts;
     }
 
     public CatalogPage clickOnOfferButton() {
-        $(offerButton).click();
+        offerButton.shouldBe(Condition.visible).click();
         return new CatalogPage();
     }
 
     public ElementsCollection getOfferButtons() {
-        return $$(offerButton);
+        return offerButtons;
     }
 
     public CatalogPage clickOnProductImage() {
-        $(productImage).click();
+        productImage.shouldBe(Condition.visible).click();
         return new CatalogPage();
     }
 
@@ -45,19 +47,19 @@ public class SearchFieldFrame extends BasePage {
     }
 
     public SelenideElement getSearchResults() {
-        return $(searchResults);
+        return searchResults;
     }
 
     public ElementsCollection getSearchTabItems() {
-        return $$(searchTabItems);
+        return searchTabItems;
     }
 
     public ElementsCollection getItemCategories() {
-        return $$(itemCategories);
+        return itemCategories;
     }
 
     public SearchFieldFrame clearSearchField() {
-        $(searchField).clear();
+        searchField.clear();
         return this;
     }
 }

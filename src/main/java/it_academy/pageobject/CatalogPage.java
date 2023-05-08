@@ -1,37 +1,39 @@
 package it_academy.pageobject;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
+import com.codeborne.selenide.Condition;
+import com.codeborne.selenide.ElementsCollection;
 
 import java.util.List;
 import java.util.stream.Collectors;
 
+import static com.codeborne.selenide.Selenide.$$x;
+import static com.codeborne.selenide.Selenide.$x;
 import static java.lang.String.format;
 
 public class CatalogPage extends BasePage {
 
-    private static final By catalogPages = By.xpath("//li[@class = " +
+    private final ElementsCollection catalogPages = $$x("//li[@class = " +
             "'catalog-navigation-classifier__item ']//span[contains(@class, 'wrapper')]");
-    private static final By catalogNavigationAsideListTitle = By.xpath("//div[contains(@class, " +
+    private final ElementsCollection catalogNavigationAsideListTitle = $$x("//div[contains(@class, " +
             "'catalog-navigation-list__aside_active')] " +
             "/div /div /div[@class = 'catalog-navigation-list__aside-title']");
 
-    private static final By droplistTitle = By.xpath("//div[contains(@class, 'aside-item_active')]" +
+    private final ElementsCollection droplistTitle = $$x("//div[contains(@class, 'aside-item_active')]" +
             "//div[contains(@class, 'dropdown-list')]" +
             "/a[contains(@href, 'onliner')]" +
             "//span[contains(@class, 'title')]");
 
-    private final By dropListDescription = By.xpath("//div[contains(@class, 'aside-item_active')]" +
-            "//div[contains(@class, 'dropdown-list')]/a[contains(@href, 'onliner')]" +
-            "//span[contains(@class, 'description')]/descendant-or-self::*");
+    private final ElementsCollection dropListDescription = $$x("//div[contains(@class, 'aside-item_active')]" +
+            "//div[contains(@class, 'dropdown-list')]/a[contains(@href, 'onliner')]//span[contains(@class, 'description')]");
 
-    private final By DROPLISTElements = By.xpath("//div[contains(@class, 'aside-item_active')]" +
+    private final ElementsCollection DROPLISTElements = $$x("//div[contains(@class, 'aside-item_active')]" +
             "//div[contains(@class, 'dropdown-list')]/a[contains(@href, 'onliner')]");
 
-    private final By catalogNavigationAsidelist = By.xpath("//div[contains(@class, " +
+    private final ElementsCollection catalogNavigationAsidelist = $$x("//div[contains(@class, " +
             "'catalog-navigation-list__aside_active')] /div /div");
 
-    private final By catalogNavigationClassifierItems = By.xpath("//li[@class = 'catalog-navigation-classifier__item ']");
+    private final ElementsCollection catalogNavigationClassifierItems = $$x("//li[@class = " +
+            "'catalog-navigation-classifier__item ']");
 
     private static final String CATALOG_CLASSIFIER_LINK_XPATH_PATTERN =
             "//span[contains(@class, 'wrapper') and contains(text(), '%s')]";
@@ -44,70 +46,65 @@ public class CatalogPage extends BasePage {
                     + "/a[contains(@href, 'onliner')]//span[contains(@class, 'title') and contains(text(), '%s')]";
 
     public CatalogPage clickOnCatalogClassifierLink(String link) {
-        waitForElementVisible(By.xpath(format(CATALOG_CLASSIFIER_LINK_XPATH_PATTERN, link)))
+        $x(format(CATALOG_CLASSIFIER_LINK_XPATH_PATTERN, link))
+                .shouldBe(Condition.visible)
                 .click();
         return this;
     }
 
     public CatalogPage clickOnCatalogClassifierCategoryLink(String link) {
-        waitForElementVisible(By.xpath(format(CATALOG_CLASSIFIER__CATEGORY_LINK_XPATH_PATTERN, link)))
+        $x(format(CATALOG_CLASSIFIER__CATEGORY_LINK_XPATH_PATTERN, link))
+                .shouldBe(Condition.visible)
                 .click();
         return this;
     }
 
     public CatalogPage clickOnCatalogClassifierButton(String button) {
-        waitForElementVisible(By.xpath(String.format(CATALOG_CLASSIFIER_LINK_XPATH_PATTERN, button)))
+        $x(String.format(CATALOG_CLASSIFIER_LINK_XPATH_PATTERN, button))
+                .shouldBe(Condition.visible)
                 .click();
         return this;
     }
 
     public ProductPage clickOnProductLink(String product) {
-        waitForElementVisible(By.xpath(format(PRODUCT_XPATH_PATTERN, product)))
+        $x(format(PRODUCT_XPATH_PATTERN, product))
+                .shouldBe(Condition.visible)
                 .click();
         return new ProductPage();
     }
 
     public List<String> getCatalogListText() {
-        List<WebElement> elements = selectElements(catalogPages);
+        List<String> elements = catalogPages.texts();
         return elements.stream()
-                .map(WebElement::getText)
                 .filter(element -> !element.equals("Onlíner Prime"))
                 .collect(Collectors.toList());
     }
 
-    public List<WebElement> getCatalogNavigationAsideList() {
-        return selectElements(catalogNavigationAsideListTitle);
+    public ElementsCollection getCatalogList() {
+        return catalogPages;
     }
 
-    public int countCatalogNavigationAsideList() {
-        return selectElements(catalogNavigationAsidelist).size();
+    public ElementsCollection getCatalogNavigationAsideListTitles() {
+        return catalogNavigationAsideListTitle;
     }
 
-    public boolean isAsideListTitleDisplayed() {
-        return isElementDisplayed(catalogNavigationAsidelist);
+    public ElementsCollection getCatalogNavigationAsideList() {
+        return catalogNavigationAsidelist;
     }
 
-    public boolean isDroplistTitleDisplayed() {
-        return isElementDisplayed(droplistTitle);
+    public ElementsCollection getDropListElements() {
+        return DROPLISTElements;
     }
 
-    public boolean isDroplistDescriptionDisplayed() {
-        return isElementDisplayed(droplistTitle);
+    public ElementsCollection getCatalogNavigationClassifierButtons() {
+        return catalogNavigationClassifierItems;
     }
 
-    public int countDroplistElements() {
-        return selectElements(DROPLISTElements).size();
+    public ElementsCollection getDropListTitle() {
+        return droplistTitle;
     }
 
-    public int countCatalogNavigationClassifierButtons(){
-        return selectElements(catalogNavigationClassifierItems).size();
-    }
-
-    public List<WebElement> getDropListTitle() {
-        return selectElements(droplistTitle);
-    }
-
-    public List<WebElement> getDropListDescription() {
-        return selectElements(dropListDescription);
+    public ElementsCollection getDropListDescription() {
+        return dropListDescription;
     }
 }

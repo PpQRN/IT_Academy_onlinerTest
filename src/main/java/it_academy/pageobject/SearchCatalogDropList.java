@@ -1,19 +1,20 @@
 package it_academy.pageobject;
 
+import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
 import org.openqa.selenium.By;
 
-
-import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.Selenide.switchTo;
+import static com.codeborne.selenide.Selenide.*;
 
 public class SearchCatalogDropList extends BasePage {
-    private final By searchDroplist = By.xpath("//div[contains(@class, 'modal-dialog')]");
-    private final By searchField = By.xpath("//input[contains(@class, 'search')]");
-    private final By searchFieldFrame = By.xpath("//iframe[@class = 'modal-iframe']");
+    private final SelenideElement searchDroplist = $x("//div[contains(@class, 'modal-dialog')]");
+    private final SelenideElement searchField = $x("//input[contains(@class, 'search')]");
+    private final SelenideElement searchFieldFrame = $x("//iframe[@class = 'modal-iframe']");
 
     public SearchCatalogDropList clickOnSearchField() {
-        $(searchDroplist).click();
+        searchDroplist
+                .shouldBe(Condition.visible)
+                .click();
         return new SearchCatalogDropList();
     }
 
@@ -22,7 +23,9 @@ public class SearchCatalogDropList extends BasePage {
     //вариантов поумнее я к сожалению не придумал, ибо там особо нет элементов которых можно было подождат
     public SearchCatalogDropList enterText(String text) {
         try {
-            $(searchField).sendKeys(text);
+            searchField
+                    .shouldBe(Condition.visible)
+                    .sendKeys(text);
                 Thread.sleep(1000);
         } catch (InterruptedException exception) {
             System.out.println("что-то прервало ожидание");
@@ -31,11 +34,11 @@ public class SearchCatalogDropList extends BasePage {
     }
 
     public SelenideElement getDropField() {
-        return $(searchDroplist);
+        return searchDroplist;
     }
 
     public SearchFieldFrame switchToSearchFieldFrame() {
-        switchTo().frame($(searchFieldFrame));
+        switchTo().frame(searchFieldFrame);
         return new SearchFieldFrame();
     }
 
