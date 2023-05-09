@@ -4,18 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c8629dfd-6164-4fac-8ba4-0099adeb9f4c" name="Changes" comment="Доделал тесты по поисковой строке">
+    <list default="true" id="c8629dfd-6164-4fac-8ba4-0099adeb9f4c" name="Changes" comment="Подправил комменты">
+      <change afterPath="$PROJECT_DIR$/src/test/java/AllTests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/allure.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/it_academy/framework/ChromeDriverCreator.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/it_academy/framework/Driver.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/it_academy/framework/DriverManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it_academy/framework/DriverManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/it_academy/framework/EdgeDriverCreator.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/it_academy/framework/WebDriverCreator.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/it_academy/pageobject/BasePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it_academy/pageobject/BasePage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/it_academy/pageobject/CatalogPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it_academy/pageobject/CatalogPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/it_academy/pageobject/Header.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it_academy/pageobject/Header.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/it_academy/pageobject/ProductPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it_academy/pageobject/ProductPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/it_academy/pageobject/SearchCatalogDropList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it_academy/pageobject/SearchCatalogDropList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/it_academy/pageobject/SearchFieldFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it_academy/pageobject/SearchFieldFrame.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/BaseTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/BaseTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/CatalogTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/CatalogTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/ProductPageTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ProductPageTest.java" afterDir="false" />
@@ -29,8 +25,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Enum" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -63,32 +59,21 @@
       <recent name="C:\Users\AlexKovalev\IdeaProjects\IT_Academy_onlinerTest\src\test" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.SearchFieldTest.searchFieldResultsAreVisibleTest">
-    <configuration name="CatalogTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.CatalogTest.CatalogSectionsTest">
+    <configuration name="AllTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="IT_Academy_onlinerTest" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="CatalogTest" />
+      <option name="MAIN_CLASS_NAME" value="AllTests" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CatalogTest.CatalogDropListContentTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="CatalogTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="IT_Academy_onlinerTest" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="CatalogTest" />
-      <option name="METHOD_NAME" value="CatalogDropListContentTest" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="CatalogTest.CatalogDropListTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="IT_Academy_onlinerTest" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="CatalogTest" />
-      <option name="METHOD_NAME" value="CatalogDropListTest" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -103,17 +88,26 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SearchFieldTest.searchFieldResultsAreVisibleTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="SearchFieldTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="IT_Academy_onlinerTest" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="SearchFieldTest" />
-      <option name="METHOD_NAME" value="searchFieldResultsAreVisibleTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SearchFieldTest.isImageWorksAsALinkTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="IT_Academy_onlinerTest" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="SearchFieldTest" />
+      <option name="METHOD_NAME" value="isImageWorksAsALinkTest" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ITAcademy_calculator [-DdriverType=chrome]" type="MavenRunConfiguration" factoryName="Maven" nameIsGenerated="true">
+    <configuration name="ггг" type="MavenRunConfiguration" factoryName="Maven">
       <MavenSettings>
         <option name="myGeneralSettings" />
         <option name="myRunnerSettings" />
@@ -125,9 +119,8 @@
             <option name="goals">
               <list>
                 <option value="clean" />
-                <option value="-Dtest=CatalogtestNotMy" />
+                <option value="-Dtest=AllTests" />
                 <option value="test" />
-                <option value="-DdriverType=edge" />
               </list>
             </option>
             <option name="pomFileName" />
@@ -142,20 +135,20 @@
       <method v="2" />
     </configuration>
     <list>
+      <item itemvalue="JUnit.AllTests" />
+      <item itemvalue="JUnit.SearchFieldTest" />
+      <item itemvalue="JUnit.SearchFieldTest.isImageWorksAsALinkTest" />
       <item itemvalue="JUnit.CatalogTest" />
-      <item itemvalue="JUnit.CatalogTest.CatalogDropListContentTest" />
-      <item itemvalue="JUnit.CatalogTest.CatalogDropListTest" />
       <item itemvalue="JUnit.CatalogTest.CatalogSectionsTest" />
-      <item itemvalue="JUnit.SearchFieldTest.searchFieldResultsAreVisibleTest" />
-      <item itemvalue="Maven.ITAcademy_calculator [-DdriverType=chrome]" />
+      <item itemvalue="Maven.ггг" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.SearchFieldTest.searchFieldResultsAreVisibleTest" />
-        <item itemvalue="JUnit.CatalogTest" />
-        <item itemvalue="JUnit.CatalogTest.CatalogDropListContentTest" />
         <item itemvalue="JUnit.CatalogTest.CatalogSectionsTest" />
-        <item itemvalue="JUnit.CatalogTest.CatalogDropListTest" />
+        <item itemvalue="JUnit.CatalogTest" />
+        <item itemvalue="JUnit.AllTests" />
+        <item itemvalue="JUnit.SearchFieldTest" />
+        <item itemvalue="JUnit.SearchFieldTest.isImageWorksAsALinkTest" />
       </list>
     </recent_temporary>
   </component>
@@ -203,7 +196,14 @@
       <option name="project" value="LOCAL" />
       <updated>1683056076273</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Подправил комменты">
+      <created>1683546400707</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1683546400707</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -222,6 +222,7 @@
     <MESSAGE value="Готовая работа" />
     <MESSAGE value="Начал писать" />
     <MESSAGE value="Доделал тесты по поисковой строке" />
-    <option name="LAST_COMMIT_MESSAGE" value="Доделал тесты по поисковой строке" />
+    <MESSAGE value="Подправил комменты" />
+    <option name="LAST_COMMIT_MESSAGE" value="Подправил комменты" />
   </component>
 </project>

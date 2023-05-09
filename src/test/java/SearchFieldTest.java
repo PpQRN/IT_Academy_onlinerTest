@@ -17,7 +17,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 import java.util.List;
 
-@Execution(ExecutionMode.CONCURRENT)
+//@Execution(ExecutionMode.CONCURRENT)
 public class SearchFieldTest extends BaseTest {
     private final Header header = new Header();
     private final SearchFieldFrame searchFieldFrame = new SearchFieldFrame();
@@ -56,7 +56,7 @@ public class SearchFieldTest extends BaseTest {
     @Test
     public void searchFieldEmptyQueryTest() {
         header.clickOnSearchField()
-                .enterText("  ")
+                .enterText(" ")
                 .switchToSearchFieldFrame()
                 .getSearchResults()
                 .shouldNotBe(Condition.visible);

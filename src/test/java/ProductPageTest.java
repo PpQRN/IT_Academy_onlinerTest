@@ -1,39 +1,39 @@
+import com.codeborne.selenide.CollectionCondition;
+import com.codeborne.selenide.Condition;
+import com.codeborne.selenide.ElementsCollection;
+import com.codeborne.selenide.SelenideElement;
 import it_academy.links.Links;
-import it_academy.pageobject.CatalogPage;
 import it_academy.pageobject.Header;
 import it_academy.pageobject.ProductPage;
-import org.assertj.core.api.SoftAssertions;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestInstance;
 
-import static com.codeborne.selenide.Selenide.open;
+import java.util.List;
+
+import static com.codeborne.selenide.Selenide.*;
 
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
-public class ProductPageTest extends BaseTest{
-    private final CatalogPage catalogPage = new CatalogPage();
+public class ProductPageTest extends BaseTest {
     private final ProductPage productPage = new ProductPage();
 
     @Test
-    public void ProductPageTest(){
+    public void ProductPageTest() {
         open(Links.HOMEPAGE.getLink());
-        new Header().clickOnMainNavigationLink("Каталог");
-        catalogPage.clickOnCatalogClassifierButton("Компьютеры")
+        new Header().clickOnMainNavigationLink("Каталог")
+                .clickOnCatalogClassifierButton("Компьютеры")
                 .clickOnCatalogClassifierCategoryLink("Комплектующие")
                 .clickOnProductLink("Видеокарты");
-        int productCount = productPage.countProducts();
-        SoftAssertions softly = new SoftAssertions();
-        softly.assertThat(productPage.getProductDescriptionList()).hasSize(productCount);
-        softly.assertThat(productPage.isProductDescriptionDisplayed()).isTrue();
-        softly.assertThat(productPage.getProductRatingList()).hasSize(productCount);
-        softly.assertThat(productPage.isProductRatingDisplayed()).isTrue();
-        softly.assertThat(productPage.getProductImageList()).hasSize(productCount);
-        softly.assertThat(productPage.isProductImageDisplayed()).isTrue();
-        softly.assertThat(productPage.getProductNameList()).hasSize(productCount);
-        softly.assertThat(productPage.isProductNameDisplayed()).isTrue();
-        softly.assertThat(productPage.getProductPriceList()).hasSize(productCount);
-        softly.assertThat(productPage.isProductPriceDisplayed()).isTrue();
-        softly.assertThat(productPage.getProductCheckBoxList()).hasSize(productCount);
-        softly.assertThat(productPage.isProductCheckBoxDisplayed()).isTrue();
-        softly.assertAll();
+        int productCount = productPage.getAllProducts().size();
+        assertElementsExist(productPage.getProductDescriptionList(), productCount);
+        assertElementsExist(productPage.getProductRatingList(), productCount);
+        assertElementsExist(productPage.getProductImageList(), productCount);
+        assertElementsExist(productPage.getProductNameList(), productCount);
+        assertElementsExist(productPage.getProductPriceList(), productCount);
+        assertElementsExist(productPage.getProductCheckBoxList(), productCount);
+    }
+
+    private static void assertElementsExist(ElementsCollection collection, int size){
+        collection.shouldHave(CollectionCondition.size(size));
+        ((List<SelenideElement>) collection).forEach(element -> element.shouldBe(Condition.visible));
     }
 }

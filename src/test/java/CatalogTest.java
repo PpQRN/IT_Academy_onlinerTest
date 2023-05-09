@@ -1,8 +1,11 @@
 import com.codeborne.selenide.CollectionCondition;
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
+import com.codeborne.selenide.logevents.SelenideLogger;
+import io.qameta.allure.selenide.AllureSelenide;
 import it_academy.links.Links;
 import it_academy.pageobject.*;
+import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestInstance;
@@ -28,7 +31,7 @@ public class CatalogTest extends BaseTest {
 
     @Test
     public void CatalogSectionsTest() {
-        List<String> catalogListText = header.clickOnMainNavigationLink("Каталог")
+        List<String> catalogListText = header.clickOnMainNavigationLink("Компас")
                 .getCatalogListText();
         assertThat(catalogListText).hasSize(catalogPage.getCatalogNavigationClassifierButtons().size()-1)
                 .containsAll(catalogList);

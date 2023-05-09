@@ -67,40 +67,6 @@ public abstract class BasePage {
         getWebDriver().switchTo().window(lastWindowHandle);
     }
 
-    public List<WebElement> selectElements(By by){
-        return getWebDriver().findElements(by);
-    }
-
-    public WebElement selectElement(By by){
-        return getWebDriver().findElement(by);
-    }
-
-    public boolean isElementDisplayed(By by){
-        return this.isExists(by) && this.getFirstVisibleElement(by) != null;
-    }
-
-    public boolean isExists(By by) {
-        return !getWebDriver().findElements(by).isEmpty();
-    }
-
-    private WebElement getFirstVisibleElement(By locator){
-        List<WebElement> elements = getWebDriver().findElements(locator);
-        for (WebElement webElement : elements){
-            try {
-                if (webElement.isDisplayed()){
-                    return webElement;
-                }
-            } catch (StaleElementReferenceException e){
-                continue;
-            }
-        }
-        return null;
-    }
-
-    public String getSelenideElementText(SelenideElement element){
-        return $(element).text();
-    }
-
     public String getCurrentURL(){
         return getWebDriver().getCurrentUrl();
     }
