@@ -17,9 +17,6 @@ public class SearchCatalogDropList extends BasePage {
         return new SearchCatalogDropList();
     }
 
-    //Я помню, что нельзя использовать sleep, но из-за специфики поля поиска тесты, в которых результатов поиска не должно быть
-    //будут проходить при любом вводе, так как изначально результаты пустые и им нужно время для прогрузки
-    //вариантов поумнее я к сожалению не придумал, ибо там особо нет элементов которых можно было подождат
     public SearchCatalogDropList enterText(String text) {
         try {
             searchField

@@ -11,13 +11,13 @@ import static com.codeborne.selenide.Selenide.$$x;
 import static java.lang.String.format;
 
 public class ProductPage extends BasePage {
-    private static final ElementsCollection productName = $$x("//a[contains(@class, 'js-product-title-link')]");
-    private static final ElementsCollection productDescription = $$x("//span[contains(@data-bind, 'product.description')]");
-    private static final ElementsCollection productRating = $$x("//div[contains(@class, 'part_4')]//div[contains(@class, 'rating-group')]//a[contains(@class, 'schema-product')]");
-    private static final ElementsCollection productPrice = $$x("//div[contains(@class, 'product__price')]/a[contains(@class, 'js-product-price-link') and contains(@href, 'prices')]");
-    private static final ElementsCollection productImage = $$x("//a[contains(@class, 'image-link')]");
-    private static final ElementsCollection productCheckBox = $$x("//span[contains(@class, 'i-checkbox i-checkbox_yellow')]");
-    private static final ElementsCollection productsAll = $$x("//div[@class = 'schema-product__group']");
+    private final ElementsCollection productName = $$x("//a[contains(@class, 'js-product-title-link')]");
+    private final ElementsCollection productDescription = $$x("//span[contains(@data-bind, 'product.description')]");
+    private final ElementsCollection productRating = $$x("//div[contains(@class, 'part_4')]//div[contains(@class, 'rating-group')]//a[contains(@class, 'schema-product')]");
+    private final ElementsCollection productPrice = $$x("//div[contains(@class, 'product__price')]/a[contains(@class, 'js-product-price-link') and contains(@href, 'prices')]");
+    private final ElementsCollection productImage = $$x("//a[contains(@class, 'image-link')]");
+    private final ElementsCollection productCheckBox = $$x("//span[contains(@class, 'i-checkbox i-checkbox_yellow')]");
+    private final ElementsCollection productsAll = $$x("//div[@class = 'schema-product__group']");
 
     public ProductPage clickOnProductTitle() {
         productName.first().shouldBe(Condition.visible).click();
