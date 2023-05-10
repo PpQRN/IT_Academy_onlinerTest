@@ -31,7 +31,7 @@ public class CatalogTest extends BaseTest {
 
     @Test
     public void CatalogSectionsTest() {
-        List<String> catalogListText = header.clickOnMainNavigationLink("Компас")
+        List<String> catalogListText = header.clickOnMainNavigationLink("Каталог")
                 .getCatalogListText();
         assertThat(catalogListText).hasSize(catalogPage.getCatalogNavigationClassifierButtons().size()-1)
                 .containsAll(catalogList);
