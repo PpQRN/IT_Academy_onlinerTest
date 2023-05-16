@@ -5,9 +5,28 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c8629dfd-6164-4fac-8ba4-0099adeb9f4c" name="Changes" comment="Добавил Аллюр отчёт, подправил комментарии">
+      <change afterPath="$PROJECT_DIR$/src/main/java/it_academy/Rest_api/Utils/GetRequestUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/it_academy/Rest_api/endpoints/OnlinerEndpoints.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/it_academy/Rest_api/model/SushiProduct.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/it_academy/Rest_api/service/SushiService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/it_academy/framework/ChromeDriverCreator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/it_academy/framework/Driver.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/it_academy/framework/DriverProvider.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/it_academy/framework/EdgeDriverCreator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/it_academy/framework/PropertiesReader.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/it_academy/framework/RemoteDriverProvider.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/endpoints.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/API/RestAssuredTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/Driver/chromedriver.exe" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/Driver/selenium-server-4.9.0.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/CatalogTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/CatalogTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/it_academy/pageobject/BasePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it_academy/pageobject/BasePage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/AllTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Web/AllTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/BaseTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Web/BaseTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/CatalogTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Web/CatalogTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/ProductPageTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Web/ProductPageTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/SearchFieldTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Web/SearchFieldTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,50 +70,77 @@
       <recent name="C:\Users\AlexKovalev\IdeaProjects\IT_Academy_onlinerTest\src\test" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.CatalogTest.CatalogSectionsTest">
-    <configuration name="AllTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="IT_Academy_onlinerTest" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="AllTests" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="CatalogTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="IT_Academy_onlinerTest" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="CatalogTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="JUnit.RestAssuredTest.productFilterTest">
     <configuration name="CatalogTest.CatalogSectionsTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="IT_Academy_onlinerTest" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="CatalogTest" />
+      <option name="PACKAGE_NAME" value="Web" />
+      <option name="MAIN_CLASS_NAME" value="Web.CatalogTest" />
       <option name="METHOD_NAME" value="CatalogSectionsTest" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ProductPageTest.ProductPageTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="RestAssuredTest.Test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="IT_Academy_onlinerTest" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="ProductPageTest" />
-      <option name="METHOD_NAME" value="ProductPageTest" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="API.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="API" />
+      <option name="MAIN_CLASS_NAME" value="API.RestAssuredTest" />
+      <option name="METHOD_NAME" value="Test" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SearchFieldTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="RestAssuredTest.productElementsTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="IT_Academy_onlinerTest" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="SearchFieldTest" />
-      <option name="TEST_OBJECT" value="class" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="API.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="API" />
+      <option name="MAIN_CLASS_NAME" value="API.RestAssuredTest" />
+      <option name="METHOD_NAME" value="productElementsTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="RestAssuredTest.productFilterTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="IT_Academy_onlinerTest" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="API.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="API" />
+      <option name="MAIN_CLASS_NAME" value="API.RestAssuredTest" />
+      <option name="METHOD_NAME" value="productFilterTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="RestAssuredTest.sushiRequestTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="IT_Academy_onlinerTest" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="API.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="API" />
+      <option name="MAIN_CLASS_NAME" value="API.RestAssuredTest" />
+      <option name="METHOD_NAME" value="sushiRequestTest" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -111,7 +157,8 @@
             <option name="goals">
               <list>
                 <option value="clean" />
-                <option value="-Dtest=AllTests" />
+                <option value="-Dtest=ProductPageTest" />
+                <option value="-Dbrowser=edge" />
                 <option value="test" />
               </list>
             </option>
@@ -127,20 +174,20 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="JUnit.ProductPageTest.ProductPageTest" />
-      <item itemvalue="JUnit.AllTests" />
-      <item itemvalue="JUnit.SearchFieldTest" />
-      <item itemvalue="JUnit.CatalogTest" />
+      <item itemvalue="JUnit.RestAssuredTest.Test" />
+      <item itemvalue="JUnit.RestAssuredTest.productElementsTest" />
+      <item itemvalue="JUnit.RestAssuredTest.productFilterTest" />
+      <item itemvalue="JUnit.RestAssuredTest.sushiRequestTest" />
       <item itemvalue="JUnit.CatalogTest.CatalogSectionsTest" />
       <item itemvalue="Maven.ггг" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.RestAssuredTest.productFilterTest" />
+        <item itemvalue="JUnit.RestAssuredTest.productElementsTest" />
+        <item itemvalue="JUnit.RestAssuredTest.Test" />
+        <item itemvalue="JUnit.RestAssuredTest.sushiRequestTest" />
         <item itemvalue="JUnit.CatalogTest.CatalogSectionsTest" />
-        <item itemvalue="JUnit.ProductPageTest.ProductPageTest" />
-        <item itemvalue="JUnit.CatalogTest" />
-        <item itemvalue="JUnit.AllTests" />
-        <item itemvalue="JUnit.SearchFieldTest" />
       </list>
     </recent_temporary>
   </component>
@@ -209,7 +256,14 @@
       <option name="project" value="LOCAL" />
       <updated>1683674794728</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Добавил Аллюр отчёт, подправил комментарии">
+      <created>1683742246526</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1683742246526</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
